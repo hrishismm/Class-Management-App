@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "159703515011",
+    "firebase_url": "https://classmanagement-9ff7d.firebaseio.com",
+    "project_id": "classmanagement-9ff7d",
+    "storage_bucket": "classmanagement-9ff7d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:159703515011:android:1502de6a5a8f194f1280b6",
+        "android_client_info": {
+          "package_name": "com.example.classmanagement"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "159703515011-5j7klmr91cil3gag45qq03f18snfgj9l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNCiFysa9-tgJSjT8M7Pt27hrpFP1-hiY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "159703515011-5j7klmr91cil3gag45qq03f18snfgj9l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
