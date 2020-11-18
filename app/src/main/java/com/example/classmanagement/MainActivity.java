@@ -77,7 +77,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
             case R.id.one:
-                Toast.makeText(this, "Working", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(),time_table.class);
+                startActivity(intent);
                 break;
             case R.id.two:
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
