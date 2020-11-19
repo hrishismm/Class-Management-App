@@ -47,6 +47,7 @@ public class signin extends AppCompatActivity {
 
             }
         });
+
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
@@ -66,7 +67,7 @@ public class signin extends AppCompatActivity {
                 final String password = e_password.getText().toString();
                 if(e_email.getText().toString().equals("admin") && e_password.getText().toString().equals("admin"))
                 {
-                    Intent intent=new Intent(getApplicationContext(),MainActivity.class);
+                    Intent intent=new Intent(getApplicationContext(),Admin.class);
                     startActivity(intent);
                 }
                 else if(email.isEmpty())

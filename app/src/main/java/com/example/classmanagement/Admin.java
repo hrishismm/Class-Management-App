@@ -2,6 +2,7 @@ package com.example.classmanagement;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,7 +21,9 @@ public class Admin extends AppCompatActivity {
         testUpdate.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"Working",Toast.LENGTH_SHORT).show();
+               // Toast.makeText(getApplicationContext(),"Working",Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(getApplicationContext(),TestUpdate.class);
+                startActivity(intent);
             }
         });
     }

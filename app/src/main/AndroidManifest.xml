@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Admin" android:exported="true"></activity>
+        <activity android:name=".TestUpdate"></activity>
+        <activity android:name=".Admin" />
         <activity android:name=".time_table" />
         <activity
             android:name=".forgot"
