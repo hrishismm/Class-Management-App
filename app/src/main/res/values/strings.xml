@@ -23,4 +23,18 @@
         <item>Fri</item>
     </string-array>
 
+    <string-array name="standard">
+        <item>7th</item>
+        <item>8th</item>
+        <item>9th</item>
+        <item>10th</item>
+    </string-array>
+
+    <string-array name="subjects">
+        <item>Physics</item>
+        <item>Chemistry</item>
+        <item>Math</item>
+        <item>Biology</item>
+    </string-array>
+
 </resources>
