@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".time_table_user">
+    <Spinner
+        android:id="@+id/day_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dialog"
+        android:entries="@array/std"
+        />
+
+    <com.github.tlaabs.timetableview.TimetableView
+        android:id="@+id/timetable"
+        app:row_count="17"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:column_count="8"
+
+        app:start_time="8"
+        app:header_title="@array/header_title" />
+
+</LinearLayout>

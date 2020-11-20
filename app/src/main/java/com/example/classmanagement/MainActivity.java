@@ -77,10 +77,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
             case R.id.one:
-                Intent intent = new Intent(getApplicationContext(),time_table.class);
-                startActivity(intent);
+                Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.two:
+               case R.id.two:
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setTitle("Confirmation PopUp!").
                         setMessage("Are you sure, that you want to logout?");
@@ -103,20 +102,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 alert11.show();
                 break;
             case R.id.three:
-                Toast.makeText(this, "Working", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.two2:
-                Toast.makeText(this, "Working", Toast.LENGTH_SHORT).show();
-                //getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new aboutus()).commit();
+                Intent intent = new Intent(getApplicationContext(),time_table_user.class);
+                startActivity(intent);
                 break;
 
+            case R.id.two2:
+              break;
             case R.id.three3:
                 //getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new feedback()).commit();
                 break;
 
             case R.id.one1:
-                Toast.makeText(this, "Working", Toast.LENGTH_SHORT).show();
+                Intent intentInvite = new Intent(Intent.ACTION_SEND);
+                intentInvite.setType("text/plain");
+                String body = "Hey there I'm using this Bhatt Tutorials app You can download it.Please check it out Download link/Google Drive Link/";
+                String subject = "Download it from here ";
+                intentInvite.putExtra(Intent.EXTRA_SUBJECT, subject);
+                intentInvite.putExtra(Intent.EXTRA_TEXT, body);
+                startActivity(Intent.createChooser(intentInvite, "Share using"));
                 break;
+
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;

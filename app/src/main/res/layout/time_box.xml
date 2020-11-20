@@ -32,5 +32,13 @@
             android:textSize="20dp"
             android:text="13:30"
             />
+        <Spinner
+            android:id="@+id/std_std"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dialog"
+            android:entries="@array/std"
+            />
+
     </LinearLayout>
 </merge>

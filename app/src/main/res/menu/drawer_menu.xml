@@ -13,7 +13,7 @@
         <item
             android:id="@+id/three"
             android:icon="@drawable/ic_launcher_background"
-            android:title="Sports News" />
+            android:title="Time Table" />
     </group>
             <!--Different Group-->
     <item android:checkableBehavior="single"
