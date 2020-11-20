@@ -13,21 +13,16 @@
         <item>Wed</item>
         <item>Thu</item>
         <item>Fri</item>
-<<<<<<< HEAD
         <item>Sat</item>
         <item>Sun</item>
     </string-array>
-=======
-    </string-array>
     <!-- TODO: Remove or change this placeholder text -->
->>>>>>> 93a9257e1e0d418f8e8a7bdef5f04c93564afc0f
     <string-array name="days">
         <item>Mon</item>
         <item>Tue</item>
         <item>Wed</item>
         <item>Thu</item>
         <item>Fri</item>
-<<<<<<< HEAD
         <item>Sat</item>
         <item>Sun</item>
     </string-array>
@@ -35,7 +30,6 @@
         <item>Eight</item>
         <item>Nine</item>
         <item>Ten</item>
-=======
     </string-array>
 
     <string-array name="standard">
@@ -50,7 +44,6 @@
         <item>Chemistry</item>
         <item>Math</item>
         <item>Biology</item>
->>>>>>> 93a9257e1e0d418f8e8a7bdef5f04c93564afc0f
     </string-array>
 
 </resources>

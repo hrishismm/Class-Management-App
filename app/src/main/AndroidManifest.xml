@@ -9,10 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<<<<<<< HEAD
 
         <activity android:name=".time_table_user" />
-=======
+
         <activity android:name=".TestUpdate"></activity>
         <activity android:name=".Admin" />
 >>>>>>> 93a9257e1e0d418f8e8a7bdef5f04c93564afc0f
