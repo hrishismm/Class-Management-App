@@ -2,6 +2,10 @@
     <string name="app_name">Class Management</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_test_update">TestUpdate</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string-array name="header_title">
         <item></item>
         <item>Mon</item>
@@ -9,15 +13,21 @@
         <item>Wed</item>
         <item>Thu</item>
         <item>Fri</item>
+<<<<<<< HEAD
         <item>Sat</item>
         <item>Sun</item>
     </string-array>
+=======
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+>>>>>>> 93a9257e1e0d418f8e8a7bdef5f04c93564afc0f
     <string-array name="days">
         <item>Mon</item>
         <item>Tue</item>
         <item>Wed</item>
         <item>Thu</item>
         <item>Fri</item>
+<<<<<<< HEAD
         <item>Sat</item>
         <item>Sun</item>
     </string-array>
@@ -25,6 +35,22 @@
         <item>Eight</item>
         <item>Nine</item>
         <item>Ten</item>
+=======
+    </string-array>
+
+    <string-array name="standard">
+        <item>7th</item>
+        <item>8th</item>
+        <item>9th</item>
+        <item>10th</item>
+    </string-array>
+
+    <string-array name="subjects">
+        <item>Physics</item>
+        <item>Chemistry</item>
+        <item>Math</item>
+        <item>Biology</item>
+>>>>>>> 93a9257e1e0d418f8e8a7bdef5f04c93564afc0f
     </string-array>
 
 </resources>
