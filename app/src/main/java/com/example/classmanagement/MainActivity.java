@@ -77,7 +77,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
             case R.id.one:
-                Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show();
+                Intent intent1 = new Intent(getApplicationContext(),View_Pdf_files_user.class);
+                startActivity(intent1);
+
                 break;
                case R.id.two:
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
