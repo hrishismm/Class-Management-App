@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.w3c.dom.Text;
@@ -159,16 +160,29 @@ public class AddQuestionFragment extends Fragment {
                     //Toast.makeText(getContext(),"Noice",Toast.LENGTH_SHORT).show();
 
                     Map<String, Object> qdetails = new HashMap<>();
-                    qdetails.put("question name",qName);
-                    qdetails.put("option 1",op1);
-                    qdetails.put("option 2",op2);
-                    qdetails.put("option 3",op3);
-                    qdetails.put("option 4", op4);
-                    qdetails.put("correct option", correct_op);
+                    qdetails.put("qName",qName);
+                    qdetails.put("op1",op1);
+                    qdetails.put("op2",op2);
+                    qdetails.put("op3",op3);
+                    qdetails.put("op4", op4);
+                    qdetails.put("cop", correct_op);
 
-                    db.collection("Tests").document(standard).collection(subject).document(qNo)
-                            .set(qdetails)
-                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    db.collection("Tests").document(standard).collection(subject).document("QuestionNum").collection(qNo)
+                            .add(qdetails)
+                            .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                @Override
+                                public void onSuccess(DocumentReference documentReference) {
+                                    Toast.makeText(getContext(),"Added Successfully", Toast.LENGTH_SHORT).show();
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Toast.makeText(getContext(),"Error", Toast.LENGTH_SHORT).show();
+                                    Log.d(TAG,e.toString());
+                                }
+                            });
+                            /*.addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
                                     Toast.makeText(getContext(),"Added Successfully", Toast.LENGTH_SHORT).show();
@@ -180,7 +194,7 @@ public class AddQuestionFragment extends Fragment {
                                     Toast.makeText(getContext(),"Error",Toast.LENGTH_SHORT).show();
                                     Log.d(TAG, e.toString());
                                 }
-                            });
+                            });*/
 
                 }
             }

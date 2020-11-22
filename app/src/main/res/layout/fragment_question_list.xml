@@ -1,18 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".QuestionListFragment"
     >
 
     <!-- TODO: Update blank fragment layout -->
-    <Button
-        android:layout_width="wrap_content"
+    <Spinner
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/testing_button"
-        android:text="Testing"
-        android:layout_centerInParent="true"
+        android:id="@+id/list_standard_spinner"
         />
 
+    <Spinner
+        android:id="@+id/list_subject_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/list_standard_spinner"
+        android:layout_marginTop="20dp" />
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/list_subject_spinner"
+        android:background="@android:color/holo_green_dark"
+        android:layout_alignParentBottom="true">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_anchor="@+id/recycler_view" />
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
 </RelativeLayout>
+
+</ScrollView>
