@@ -11,7 +11,7 @@ import android.widget.Toast;
 public class Admin extends AppCompatActivity {
 
     Button testUpdate;
-    Button time_table;
+    Button time_table,add_pdf;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +19,8 @@ public class Admin extends AppCompatActivity {
 
         testUpdate = (Button) findViewById(R.id.testUpdateButton);
         time_table= (Button) findViewById(R.id.time_table);
+        add_pdf= (Button) findViewById(R.id.add_pdf);
+
         time_table.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -31,6 +33,14 @@ public class Admin extends AppCompatActivity {
             public void onClick(View view) {
                // Toast.makeText(getApplicationContext(),"Working",Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent(getApplicationContext(),TestUpdate.class);
+                startActivity(intent);
+            }
+        });
+        add_pdf.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                // Toast.makeText(getApplicationContext(),"Working",Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(getApplicationContext(),offline_downloads_file_upload_admin.class);
                 startActivity(intent);
             }
         });

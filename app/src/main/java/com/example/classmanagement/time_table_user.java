@@ -2,6 +2,8 @@ package com.example.classmanagement;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.Spinner;
 
@@ -26,7 +28,7 @@ public class time_table_user extends AppCompatActivity {
     public static final int REQUEST_ADD = 1;
     public static final int REQUEST_EDIT = 2;
     private FirebaseFirestore fstore = FirebaseFirestore.getInstance();
-    private DocumentReference noteRef = fstore.document("Time_table/seven");
+    //private DocumentReference noteRef = fstore.document("Time_table/seven");
 
     private TimetableView timetable;
 
@@ -37,7 +39,30 @@ public class time_table_user extends AppCompatActivity {
         daySpinner = findViewById(R.id.day_spinner);
 
         init();
-        loadSavedData();
+
+        daySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+            {
+                String selectedItem = parent.getItemAtPosition(position).toString();
+                if(selectedItem.equals("Eight"))
+                {
+                    loadSavedData("Eight");
+                }
+                if(selectedItem.equals("Nine"))
+                {
+                    loadSavedData("Nine");
+                }
+                if(selectedItem.equals("Ten"))
+                {
+                    loadSavedData("Ten");
+                }
+            } // to close the onItemSelected
+            public void onNothingSelected(AdapterView<?> parent)
+            {
+
+            }
+        });
 
 
     }
@@ -51,13 +76,13 @@ public class time_table_user extends AppCompatActivity {
 
 
         /** get  data from Firestore and then restore it in the timetable */
-        private void loadSavedData() {
+        private void loadSavedData(String s) {
             timetable.removeAll();
             String text =daySpinner.getSelectedItem().toString();
 
             ArrayList<Schedule> schedules = new ArrayList<Schedule>();
             for (int i = 0; i < 200; i++) {
-                DocumentReference documentReference = fstore.collection("Time_table").document("class").collection(text).document(String.valueOf(i));
+                DocumentReference documentReference = fstore.collection("Time_table").document("class").collection(s).document(String.valueOf(i));
                 documentReference.get()
                         .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                             @Override

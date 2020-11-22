@@ -10,10 +10,9 @@
         android:id="@+id/testUpdateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Test Update"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        />
+        android:text="Test Update" />
 
     <Button
         android:id="@+id/time_table"
@@ -23,5 +22,19 @@
         android:layout_centerInParent="true"
         android:layout_marginTop="282dp"
         android:text="Add Time Table" />
+
+
+    <Button
+        android:id="@+id/add_pdf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/time_table"
+
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="405dp"
+        android:text="Add pdf files" />
 
 </RelativeLayout>

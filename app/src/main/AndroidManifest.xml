@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.classmanagement">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,12 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".View_Pdf_files_user"></activity>
+        <activity android:name=".offline_downloads_file_upload_admin" />
         <activity android:name=".time_table_user" />
-
-        <activity android:name=".TestUpdate"></activity>
+        <activity android:name=".TestUpdate" />
         <activity android:name=".Admin" />
->>>>>>> 93a9257e1e0d418f8e8a7bdef5f04c93564afc0f
         <activity android:name=".time_table" />
         <activity
             android:name=".forgot"
@@ -45,7 +47,5 @@
         </activity>
         <activity android:name=".EditActivity" />
     </application>
-
-    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
