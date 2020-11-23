@@ -37,4 +37,14 @@
         android:layout_marginTop="405dp"
         android:text="Add pdf files" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/testlinkupdate_button"
+        android:text="Test Link Upload"
+        android:layout_alignStart="@+id/add_pdf"
+        android:layout_below="@+id/add_pdf"
+        android:layout_marginTop="40dp"
+        />
+
 </RelativeLayout>

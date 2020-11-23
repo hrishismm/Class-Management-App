@@ -44,7 +44,7 @@ public class QuestionListFragment extends Fragment {
     String sub,std,TAG="QuestionListFragment";
     private FirebaseFirestore db;
     private CollectionReference ref;
-    private QuestionItemAdapter adapter;
+    public QuestionItemAdapter adapter;
     RecyclerView recyclerView;
 
 
@@ -102,7 +102,7 @@ public class QuestionListFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 //sub=spin2.getSelectedItem().toString().trim();
-                setUpRecylerView();
+                //setUpRecylerView();
             }
 
             @Override
@@ -111,35 +111,39 @@ public class QuestionListFragment extends Fragment {
             }
         });
         recyclerView= view.findViewById(R.id.recycler_view);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        //recyclerView.setHasFixedSize(true);
+        //recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        setUpRecylerView();
         return view;
     }
     public void setUpRecylerView(){
-        for (int i=1;i<=50;i++){
+        //for (int i=1;i<=50;i++){
             Log.d(TAG, "setUpRecylerView: In setuprecylerview");
             std=spin1.getSelectedItem().toString().trim();
             sub=spin2.getSelectedItem().toString().trim();
             CollectionReference cref;
 
-            ref=db.collection("Tests").document(std).collection(sub).document("QuestionNum").collection(String.valueOf(i));
+           // ref=db.collection("Tests").document(std).collection(sub).document("QuestionNum").collection(String.valueOf(i));
 
-            Query query = ref.orderBy("qName",Query.Direction.ASCENDING);
+           // Query query = ref.orderBy("qName",Query.Direction.ASCENDING);
+
+            Query query2 = db.collection("testing").orderBy("qName",Query.Direction.ASCENDING);
             FirestoreRecyclerOptions<QuestionItem> options = new FirestoreRecyclerOptions.Builder<QuestionItem>()
-                    .setQuery(query,QuestionItem.class)
+                    .setQuery(query2,QuestionItem.class)
                     .build();
 
             adapter=new QuestionItemAdapter(options);
             recyclerView.setHasFixedSize(true);
             recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
             recyclerView.setAdapter(adapter);
-            adapter.startListening();
+            //adapter.startListening();
 
-        }
+
+       // }
     }
 
 
- /*   public void onStart() {
+    public void onStart() {
         super.onStart();
         adapter.startListening();
     }
@@ -148,6 +152,6 @@ public class QuestionListFragment extends Fragment {
     public void onStop() {
         super.onStop();
         adapter.stopListening();
-    }*/
+    }
 }
 
