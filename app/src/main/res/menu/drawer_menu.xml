@@ -5,7 +5,7 @@
         <item
             android:id="@+id/one"
             android:icon="@drawable/ic_launcher_background"
-            android:title="Offline Downloads" />
+            android:title="Study Material" />
         <item
             android:id="@+id/two"
             android:icon="@drawable/ic_launcher_background"
@@ -30,7 +30,7 @@
             <item
                 android:id="@+id/three3"
                 android:icon="@drawable/ic_launcher_background"
-                android:title="Feedback" />
+                android:title="Locate Us" />
         </menu>
     </item>
 

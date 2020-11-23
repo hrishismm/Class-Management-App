@@ -11,6 +11,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -38,6 +39,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 
 /*Implements NavigationItemSelectedListener*/
@@ -109,9 +111,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
             case R.id.two2:
-              break;
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new aboutus()).commit();
+                break;
             case R.id.three3:
-                //getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new feedback()).commit();
+                Double myLatitude = 19.0262;
+                Double myLongitude = 72.8560;
+                String labelLocation = "Bhatt Tutorials";
+                Intent intenta = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:<" + myLatitude  + ">,<" + myLongitude + ">?q=<" + myLatitude  + ">,<" + myLongitude + ">(" + labelLocation + ")"));
+                startActivity(intenta);
                 break;
 
             case R.id.one1:
