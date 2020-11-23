@@ -45,5 +45,12 @@
         <item>Math</item>
         <item>Biology</item>
     </string-array>
+    <string name="app_description">
+        We are an education service institution, rendering ICSE Science coachingin Matunga, Chembur and Ghatkopar. We have been catering to the educational coaching needs of ICSE Std. 7th to 10th students since theyear 2003.We aspire to make our students excel in terms of thought, ideology andperformance. To achieve this, we work with commitment and dedication.Here at ​BHATTTUTORIALS​,  we truly understand that the final outcomeis always in the hands of the student; but, we also believe that it is theteacher who can truly direct the student to achieve the desired goal.There is no substitute for daily practice. With extensive assignments,innumerous mock test papers and doubt classes at​​BHATTTUTORIALSstudents can practice over and over again until they are thorough withtheir concept and understanding.
+
+    </string>
+    <string name="contact_group">9172228888 / 9820115665</string>
+    <string name="fb">https://www.facebook.com/bhatttutorials/</string>
+    <string name="insta">https://www.facebook.com/bhatttutorials/</string>
 
 </resources>
