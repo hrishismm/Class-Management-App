@@ -12,7 +12,7 @@ public class Admin extends AppCompatActivity {
 
     Button testUpdate;
     Button time_table,add_pdf;
-    Button linkUpdate;
+    Button linkUpdate,noticeUpload;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +22,7 @@ public class Admin extends AppCompatActivity {
         time_table= (Button) findViewById(R.id.time_table);
         add_pdf= (Button) findViewById(R.id.add_pdf);
         linkUpdate=(Button) findViewById(R.id.testlinkupdate_button);
+        noticeUpload=(Button) findViewById(R.id.notice_upload_btn);
 
         time_table.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -53,6 +54,15 @@ public class Admin extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        noticeUpload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),NoticeUpload.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 }

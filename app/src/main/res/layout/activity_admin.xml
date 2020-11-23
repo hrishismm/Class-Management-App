@@ -46,5 +46,13 @@
         android:layout_below="@+id/add_pdf"
         android:layout_marginTop="40dp"
         />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/notice_upload_btn"
+        android:layout_below="@+id/testlinkupdate_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Upload Notice"/>
 
 </RelativeLayout>
