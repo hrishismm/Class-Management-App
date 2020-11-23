@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content">
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,6 +11,8 @@
     >
 
     <!-- TODO: Update blank fragment layout -->
+
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -39,7 +44,8 @@
         android:id="@+id/question_no_text"
         android:layout_below="@+id/select_subject_spinner"
         android:layout_marginTop="20dp"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:hint="Q No."/>
 
     <EditText
         android:layout_width="match_parent"
@@ -105,4 +111,7 @@
         />
 
 
+
+
 </RelativeLayout>
+</ScrollView>

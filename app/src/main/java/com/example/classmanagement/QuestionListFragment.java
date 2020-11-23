@@ -3,12 +3,27 @@ package com.example.classmanagement;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,6 +40,13 @@ public class QuestionListFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    Spinner spin1,spin2;
+    String sub,std,TAG="QuestionListFragment";
+    private FirebaseFirestore db;
+    private CollectionReference ref;
+    public QuestionItemAdapter adapter;
+    RecyclerView recyclerView;
+
 
     public QuestionListFragment() {
         // Required empty public constructor
@@ -62,13 +84,74 @@ public class QuestionListFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_question_list, container, false);
-        Button b1=(Button) view.findViewById(R.id.testing_button);
-        b1.setOnClickListener(new View.OnClickListener() {
+
+        db=FirebaseFirestore.getInstance();
+
+        spin1=(Spinner)view.findViewById(R.id.list_standard_spinner);
+        ArrayAdapter<String> arrayAdapter1 = new ArrayAdapter<String>(getContext(), android.R.layout.simple_expandable_list_item_1, getResources().getStringArray(R.array.standard));
+        arrayAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spin1.setAdapter(arrayAdapter1);
+
+
+
+        spin2= (Spinner) view.findViewById(R.id.list_subject_spinner);
+        ArrayAdapter<String> arrayAdapter2 = new ArrayAdapter<String>(getContext(), android.R.layout.simple_expandable_list_item_1,getResources().getStringArray(R.array.subjects));
+        arrayAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spin2.setAdapter(arrayAdapter2);
+       spin2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onClick(View view) {
-                Toast.makeText(getContext(),"Working",Toast.LENGTH_SHORT).show();
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                //sub=spin2.getSelectedItem().toString().trim();
+                //setUpRecylerView();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
             }
         });
+        recyclerView= view.findViewById(R.id.recycler_view);
+        //recyclerView.setHasFixedSize(true);
+        //recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        setUpRecylerView();
         return view;
     }
+    public void setUpRecylerView(){
+        //for (int i=1;i<=50;i++){
+            Log.d(TAG, "setUpRecylerView: In setuprecylerview");
+            std=spin1.getSelectedItem().toString().trim();
+            sub=spin2.getSelectedItem().toString().trim();
+            CollectionReference cref;
+
+           // ref=db.collection("Tests").document(std).collection(sub).document("QuestionNum").collection(String.valueOf(i));
+
+           // Query query = ref.orderBy("qName",Query.Direction.ASCENDING);
+
+            Query query2 = db.collection("testing").orderBy("qName",Query.Direction.ASCENDING);
+            FirestoreRecyclerOptions<QuestionItem> options = new FirestoreRecyclerOptions.Builder<QuestionItem>()
+                    .setQuery(query2,QuestionItem.class)
+                    .build();
+
+            adapter=new QuestionItemAdapter(options);
+            recyclerView.setHasFixedSize(true);
+            recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+            recyclerView.setAdapter(adapter);
+            //adapter.startListening();
+
+
+       // }
+    }
+
+
+    public void onStart() {
+        super.onStart();
+        adapter.startListening();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        adapter.stopListening();
+    }
 }
+
