@@ -4,13 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TestLinkUpdate">
+    tools:context=".TestLinkUpdate"
+    android:gravity="center_vertical"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Upload Test Link"
+        android:textSize="30dp"
+        android:textColor="@color/black"
+        android:id="@+id/test_link_text"
+        android:layout_alignParentTop="true"
+        android:textAlignment="center"
+        />
 
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/std_spinner"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/test_link_text"
+        android:layout_marginTop="10dp"
+        />
 
     <Spinner
         android:layout_width="match_parent"
@@ -18,10 +34,10 @@
         android:id="@+id/sub_spinner"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/std_spinner"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp" />
 
     <EditText
-        android:layout_width="250dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/link_text"
         android:layout_below="@+id/sub_spinner"
@@ -29,6 +45,7 @@
         android:layout_marginTop="50dp"
         android:singleLine="true"
         android:hint="Enter link here"
+        android:textAlignment="center"
         />
 
     <Button

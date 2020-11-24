@@ -50,7 +50,7 @@ private Spinner daySpinner;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_time_table);
-
+        this.setTitle("Update Timetable");
         init();
 
 

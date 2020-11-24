@@ -37,7 +37,7 @@ public class offline_downloads_file_upload_admin extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_offline_downloads_file_upload_admin);
-
+        this.setTitle("Add Notes");
     fileupload=(EditText)findViewById(R.id.editText);
     upload_button=(Button)findViewById(R.id.button);
 

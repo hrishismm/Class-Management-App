@@ -1,7 +1,10 @@
 package com.example.classmanagement;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,44 +13,35 @@ import android.widget.Toast;
 
 public class Admin extends AppCompatActivity {
 
-    Button testUpdate;
-    Button time_table,add_pdf;
-    Button linkUpdate,noticeUpload;
+    CardView c1,c2,c3,c4,c5;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
 
-        testUpdate = (Button) findViewById(R.id.testUpdateButton);
-        time_table= (Button) findViewById(R.id.time_table);
-        add_pdf= (Button) findViewById(R.id.add_pdf);
-        linkUpdate=(Button) findViewById(R.id.testlinkupdate_button);
-        noticeUpload=(Button) findViewById(R.id.notice_upload_btn);
+        c1=(CardView)findViewById(R.id.update_timetable);
+        c2=(CardView)findViewById(R.id.addNotes);
+        c3=(CardView)findViewById(R.id.upload_testlink);
+        c4=(CardView)findViewById(R.id.upload_notice);
+        c5=(CardView)findViewById(R.id.logout);
 
-        time_table.setOnClickListener(new View.OnClickListener(){
+        c1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(getApplicationContext(),time_table.class);
                 startActivity(intent);
             }
         });
-        testUpdate.setOnClickListener(new View.OnClickListener(){
+
+        c2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               // Toast.makeText(getApplicationContext(),"Working",Toast.LENGTH_SHORT).show();
-                Intent intent=new Intent(getApplicationContext(),TestUpdate.class);
-                startActivity(intent);
-            }
-        });
-        add_pdf.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                // Toast.makeText(getApplicationContext(),"Working",Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent(getApplicationContext(),offline_downloads_file_upload_admin.class);
                 startActivity(intent);
             }
         });
-        linkUpdate.setOnClickListener(new View.OnClickListener() {
+
+        c3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(getApplicationContext(),TestLinkUpdate.class);
@@ -55,13 +49,39 @@ public class Admin extends AppCompatActivity {
             }
         });
 
-        noticeUpload.setOnClickListener(new View.OnClickListener() {
+        c4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(getApplicationContext(),NoticeUpload.class);
                 startActivity(intent);
             }
         });
+        c5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(Admin.this);
+                builder.setTitle("Confirmation PopUp!").
+                        setMessage("Are you sure, that you want to logout?");
+                builder.setPositiveButton("Yes",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                Intent i = new Intent(getApplicationContext(),
+                                        signin.class);
+                                startActivity(i);
+                            }
+                        });
+                builder.setNegativeButton("No",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog alert11 = builder.create();
+                alert11.show();
+            }
+        });
+
+        this.setTitle("Admin Panel");
 
 
     }
