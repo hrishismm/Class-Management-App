@@ -12,6 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".UserNoticeDisplay" android:exported="true"></activity>
+        <activity android:name=".NoticeUpload" />
         <activity android:name=".FinalUserTest" />
         <activity
             android:name=".UserTest"

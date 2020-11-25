@@ -29,7 +29,7 @@ public class TestLinkUpdate extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_link_update);
-
+        this.setTitle("Update Test Link");
         submit=(Button)findViewById(R.id.submit_link_button);
         link_txt=(EditText) findViewById(R.id.link_text);
         std_spin=(Spinner)findViewById(R.id.std_spinner);
