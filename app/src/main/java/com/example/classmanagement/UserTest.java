@@ -22,6 +22,7 @@ public class UserTest extends AppCompatActivity {
         std_spinner=(Spinner)findViewById(R.id.user_std_spinner);
         sub_spinner=(Spinner)findViewById(R.id.user_sub_spinner);
         btn=(Button)findViewById(R.id.test_btn);
+        this.setTitle("Tests");
 
         ArrayAdapter<String> arrayAdapter1 = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_expandable_list_item_1, getResources().getStringArray(R.array.standard));
         arrayAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

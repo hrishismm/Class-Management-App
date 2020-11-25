@@ -5,7 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UserNoticeDisplay">
-
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Notices"
+    android:layout_centerHorizontal="true"
+    android:textSize="30dp"
+    android:id="@+id/t1"/>
     <ProgressBar
         android:id="@+id/progress_circle"
         android:layout_width="wrap_content"
@@ -15,7 +21,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/recycler"/>
+        android:id="@+id/recycler"
+        android:layout_below="@+id/t1"/>
 
 
 </RelativeLayout>

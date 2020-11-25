@@ -14,6 +14,12 @@
         android:entries="@array/std"
         />
 
+    <ProgressBar
+        android:id="@+id/progress_circle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="165dp"/>
+
     <com.github.tlaabs.timetableview.TimetableView
         android:id="@+id/timetable"
         app:row_count="17"
@@ -23,5 +29,6 @@
 
         app:start_time="8"
         app:header_title="@array/header_title" />
+
 
 </LinearLayout>

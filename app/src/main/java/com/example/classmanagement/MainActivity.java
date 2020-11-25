@@ -65,12 +65,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toolbar = findViewById(R.id.toolbar);
         mAuth = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
+        this.setTitle("Bhatt Tutorials");
         /*Creating the toggle*/
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         /*For the fragment to be selected by default*/
-
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                    new aboutus()).commit();
+            navigationView.setCheckedItem(R.id.one);
+        }
 
     }
 
@@ -112,7 +117,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Intent i=new Intent(getApplicationContext(),UserTest.class);
                 startActivity(i);
                 break;
-                case R.id.one1:
+            case R.id.five:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new UserNoticeDisplay()).commit();
+                break;
+
+            case R.id.one1:
                 Intent intentInvite = new Intent(Intent.ACTION_SEND);
                 intentInvite.setType("text/plain");
                 String body = "Hey there I'm using this Bhatt Tutorials app You can download it.Please check it out Download link/Google Drive Link/";

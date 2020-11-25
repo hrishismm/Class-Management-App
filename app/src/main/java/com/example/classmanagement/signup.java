@@ -109,7 +109,7 @@ public class signup extends AppCompatActivity {
 
                                     } else {
                                         // If sign in fails, display a message to the user.
-                                        Toast.makeText(signup.this, "Error", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(signup.this, "Check your credentials", Toast.LENGTH_SHORT).show();
                                     }
 
                                     // ...

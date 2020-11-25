@@ -4,21 +4,24 @@
             <!--Add Items-->
         <item
             android:id="@+id/one"
-            android:icon="@drawable/ic_launcher_background"
+            android:icon="@drawable/ic_study_material"
             android:title="Study Material" />
         <item
-            android:id="@+id/two"
-            android:icon="@drawable/ic_launcher_background"
-            android:title="Logout" />
-        <item
             android:id="@+id/three"
-            android:icon="@drawable/ic_launcher_background"
+            android:icon="@drawable/ic_time_table"
             android:title="Time Table" />
         <item
             android:id="@+id/four"
-            android:icon="@drawable/ic_launcher_background"
+            android:icon="@drawable/ic_tests"
             android:title="Tests" />
-
+        <item
+            android:id="@+id/five"
+            android:icon="@drawable/ic_notice"
+            android:title="Notices" />
+        <item
+            android:id="@+id/two"
+            android:icon="@drawable/ic_logout"
+            android:title="Logout" />
     </group>
             <!--Different Group-->
     <item android:checkableBehavior="single"
@@ -26,19 +29,19 @@
         <menu>
             <item
                 android:id="@+id/one1"
-                android:icon="@drawable/ic_launcher_background"
+                android:icon="@drawable/ic_share"
                 android:title="Share" />
             <item
                 android:id="@+id/two2"
-                android:icon="@drawable/ic_launcher_background"
+                android:icon="@drawable/ic_aboutus"
                 android:title="About us" />
             <item
                 android:id="@+id/three3"
-                android:icon="@drawable/ic_launcher_background"
+                android:icon="@drawable/ic_locate_us"
                 android:title="Locate Us" />
             <item
                 android:id="@+id/four4"
-                android:icon="@drawable/ic_launcher_background"
+                android:icon="@drawable/ic_testimonials"
                 android:title="Testimonials" />
 
 

@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
@@ -27,6 +28,7 @@ import java.util.ArrayList;
 
 public class time_table_user extends Fragment {
     private Spinner daySpinner;
+    private ProgressBar mProgressCircle;
 
     private Context context;
     public static final int REQUEST_ADD = 1;
@@ -41,6 +43,7 @@ public class time_table_user extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v= inflater.inflate(R.layout.activity_time_table_user,container,false);
         daySpinner = v.findViewById(R.id.day_spinner);
+        mProgressCircle = v.findViewById(R.id.progress_circle);
 
         this.context = getActivity();
         timetable = v.findViewById(R.id.timetable);
@@ -109,6 +112,7 @@ public class time_table_user extends Fragment {
 //.. add one or more schedules
                                     timetable.add(schedules);
 
+                                    mProgressCircle.setVisibility(View.INVISIBLE);
 
                                 } else {
                                     // Toast.makeText(time_table.this, "Document does not exist", Toast.LENGTH_SHORT).show();
@@ -120,6 +124,8 @@ public class time_table_user extends Fragment {
                             public void onFailure(@NonNull Exception e) {
                                 //Toast.makeText(MainActivity.this, "Error!", Toast.LENGTH_SHORT).show();
                                 //Log.d(TAG, e.toString());
+                                mProgressCircle.setVisibility(View.INVISIBLE);
+
                             }
                         });
 

@@ -20,14 +20,10 @@ public class testimonials extends Fragment {
 View v= inflater.inflate(R.layout.activity_testimonials,container,false);
         EasyImageSlider slider = v.findViewById(R.id.slider);
 
-        if(a==0) {
-
-            slider.put(R.drawable.testimonial1);
+                   slider.put(R.drawable.testimonial1);
             slider.put(R.drawable.testimonial2);
             slider.put(R.drawable.testimonial3);
             slider.with(getActivity());
-            a+=1;
-        }
 
 return v;
 

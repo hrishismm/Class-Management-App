@@ -29,6 +29,7 @@ public class FinalUserTest extends AppCompatActivity {
         display=(TextView)findViewById(R.id.display_text);
         url_text=(TextView)findViewById(R.id.display_url);
         webView=(WebView)findViewById(R.id.webview);
+        this.setTitle("Test");
         db=FirebaseFirestore.getInstance();
         Intent intent = getIntent();
         sub_text=intent.getStringExtra("subject");

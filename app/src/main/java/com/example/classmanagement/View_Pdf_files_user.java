@@ -15,7 +15,9 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -28,6 +30,7 @@ import java.util.List;
 
 public class View_Pdf_files_user extends Fragment {
 ListView mypdfListView;
+    private ProgressBar mProgressCircle;
 
 DatabaseReference databaseReference;
 
@@ -38,6 +41,7 @@ List<uploadPDF> uploadPDFs;
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v= inflater.inflate(R.layout.activity_view__pdf_files_user,container,false);
+        mProgressCircle = v.findViewById(R.id.progress_circle);
 
         mypdfListView=(ListView)v.findViewById(R.id.myListView);
         uploadPDFs=new ArrayList<>();
@@ -82,7 +86,7 @@ List<uploadPDF> uploadPDFs;
 
                     uploadPDF uploadPDF=postSnapshot.getValue(uploadPDF.class);
                     uploadPDFs.add(uploadPDF);
-
+                    mProgressCircle.setVisibility(View.INVISIBLE);
                 }
 
                 String[] uploads=new String[uploadPDFs.size()];
@@ -109,7 +113,8 @@ List<uploadPDF> uploadPDFs;
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                mProgressCircle.setVisibility(View.INVISIBLE);
+                Toast.makeText(getActivity(), "Error", Toast.LENGTH_SHORT).show();
             }
         });
 
