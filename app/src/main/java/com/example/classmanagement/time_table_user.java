@@ -2,13 +2,17 @@ package com.example.classmanagement;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import com.github.tlaabs.timetableview.Schedule;
 import com.github.tlaabs.timetableview.Time;
@@ -21,7 +25,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 
-public class time_table_user extends AppCompatActivity {
+public class time_table_user extends Fragment {
     private Spinner daySpinner;
 
     private Context context;
@@ -32,13 +36,15 @@ public class time_table_user extends AppCompatActivity {
 
     private TimetableView timetable;
 
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_time_table_user);
-        daySpinner = findViewById(R.id.day_spinner);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View v= inflater.inflate(R.layout.activity_time_table_user,container,false);
+        daySpinner = v.findViewById(R.id.day_spinner);
 
-        init();
+        this.context = getActivity();
+        timetable = v.findViewById(R.id.timetable);
+        timetable.setHeaderHighlight(2);
 
         daySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
         {
@@ -63,15 +69,8 @@ public class time_table_user extends AppCompatActivity {
 
             }
         });
-
-
+        return v;
     }
-
-    private void init() {
-        this.context = this;
-        timetable = findViewById(R.id.timetable);
-        timetable.setHeaderHighlight(2);
-      }
 
 
 

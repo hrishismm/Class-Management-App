@@ -79,8 +79,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
             case R.id.one:
-                Intent intent1 = new Intent(getApplicationContext(),View_Pdf_files_user.class);
-                startActivity(intent1);
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new View_Pdf_files_user()).commit();
 
                 break;
                case R.id.two:
@@ -106,8 +105,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 alert11.show();
                 break;
             case R.id.three:
-                Intent intent = new Intent(getApplicationContext(),time_table_user.class);
-                startActivity(intent);
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new time_table_user()).commit();
+
+                break;
+            case R.id.four:
+                Intent i=new Intent(getApplicationContext(),UserTest.class);
+                startActivity(i);
+                break;
+                case R.id.one1:
+                Intent intentInvite = new Intent(Intent.ACTION_SEND);
+                intentInvite.setType("text/plain");
+                String body = "Hey there I'm using this Bhatt Tutorials app You can download it.Please check it out Download link/Google Drive Link/";
+                String subject = "Download it from here ";
+                intentInvite.putExtra(Intent.EXTRA_SUBJECT, subject);
+                intentInvite.putExtra(Intent.EXTRA_TEXT, body);
+                startActivity(Intent.createChooser(intentInvite, "Share using"));
                 break;
 
             case R.id.two2:
@@ -120,16 +132,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Intent intenta = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:<" + myLatitude  + ">,<" + myLongitude + ">?q=<" + myLatitude  + ">,<" + myLongitude + ">(" + labelLocation + ")"));
                 startActivity(intenta);
                 break;
-
-            case R.id.one1:
-                Intent intentInvite = new Intent(Intent.ACTION_SEND);
-                intentInvite.setType("text/plain");
-                String body = "Hey there I'm using this Bhatt Tutorials app You can download it.Please check it out Download link/Google Drive Link/";
-                String subject = "Download it from here ";
-                intentInvite.putExtra(Intent.EXTRA_SUBJECT, subject);
-                intentInvite.putExtra(Intent.EXTRA_TEXT, body);
-                startActivity(Intent.createChooser(intentInvite, "Share using"));
+            case R.id.four4:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new testimonials()).commit();
                 break;
+
 
         }
         drawerLayout.closeDrawer(GravityCompat.START);

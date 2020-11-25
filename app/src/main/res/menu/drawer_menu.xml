@@ -14,6 +14,11 @@
             android:id="@+id/three"
             android:icon="@drawable/ic_launcher_background"
             android:title="Time Table" />
+        <item
+            android:id="@+id/four"
+            android:icon="@drawable/ic_launcher_background"
+            android:title="Tests" />
+
     </group>
             <!--Different Group-->
     <item android:checkableBehavior="single"
@@ -31,6 +36,13 @@
                 android:id="@+id/three3"
                 android:icon="@drawable/ic_launcher_background"
                 android:title="Locate Us" />
+            <item
+                android:id="@+id/four4"
+                android:icon="@drawable/ic_launcher_background"
+                android:title="Testimonials" />
+
+
+
         </menu>
     </item>
 
